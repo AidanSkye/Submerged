@@ -1,0 +1,39 @@
+- New auto spread system that uses a list of stored locations rather than random positions around the map deemed valid
+
+:grey_question: ~~Rework backfire, making it only have a chance to happen and act like when the killer gets shot when backfire doesn't happen (read [this message](https://discord.com/channels/1472099447889596417/1472099449219059776/1478934333363327148) for more info)~~
+
+:grey_question: ~~Nerf bartender role~~:
+> :x: ~~Bartender cannot defend themselves~~
+> :x: ~~Bartender defense vial increases price for every one purchased~~
+> :x: ~~Gun backfire bypasses shield (might keep this one? needs more discussion)~~
+>
+> - Bartender can no longer see poison
+> :white_check_mark: ~~Guesser bypasses bartender shield (less of a nerf and more of a bugfix since we set cooldown to 3 seconds)~~
+> :white_check_mark: ~~Increase defense vial cost~~
+>
+> If you disagree with any of these nerfs, please feel free to discuss any of them in general
+
+:white_check_mark: ~~Swapper cannot swap while in the air~~
+
+- Cool map voting system (this one's probably gonna take a while)
+
+:white_check_mark: ~~Elevators :sob: (might just use a separate mod for this)~~ (Added by Moving Elevators mod)
+
+:white_check_mark: ~~Cameras~~ (Added by Vista mod)
+
+- Add custom blocks for Submerged map
+
+:white_check_mark: ~~Fix vigilante gun cooldown at the start~~
+
+- Fix being able to get stuck in seats when dismounting quickly
+
+- Custom roles ([some ideas](https://discord.com/channels/1472099447889596417/1472211253425602757))
+
+- Custom tasks, with some being map specific
+
+-- Ideas, may not be added --
+- [Improvised weapons](https://discord.com/channels/1472099447889596417/1475637976212963348) maybe?
+
+- Maybe some custom gamemodes? (custom gamemodes are like loose ends) ([one idea](https://discord.com/channels/1472099447889596417/1472219606805516471))
+
+- [Remote bombs](https://discord.com/channels/1472099447889596417/1473560464238575617)?

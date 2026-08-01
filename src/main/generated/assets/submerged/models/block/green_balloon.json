@@ -1,0 +1,7 @@
+{
+  "parent": "submerged:block/balloon",
+  "textures": {
+    "0": "submerged:block/green_balloon",
+    "particle": "submerged:block/green_balloon"
+  }
+}

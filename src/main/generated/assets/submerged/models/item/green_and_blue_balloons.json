@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "submerged:item/green_and_blue_balloons"
+  }
+}

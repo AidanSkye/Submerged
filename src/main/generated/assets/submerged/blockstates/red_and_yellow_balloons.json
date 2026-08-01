@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "submerged:block/red_and_yellow_balloons",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "submerged:block/red_and_yellow_balloons"
+    },
+    "facing=south": {
+      "model": "submerged:block/red_and_yellow_balloons",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "submerged:block/red_and_yellow_balloons",
+      "y": 270
+    }
+  }
+}

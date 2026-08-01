@@ -1,0 +1,7 @@
+// 1.21.1	2026-07-31T16:20:50.3635295	Submerged/Block Loot Tables
+bcf609617b9471d4d77c4e75202b3cf256b44b09 data\submerged\loot_table\blocks\blue_balloon.json
+a9cbd3f46634eb9eb0ef8be84e084087f382a103 data\submerged\loot_table\blocks\yellow_balloon.json
+0a656a0ce3a9d66772cfc0e8ed0d6372cc3f9c19 data\submerged\loot_table\blocks\red_balloon.json
+0ef402ef93ba08fdeb306f6487042d0c6e5ea1f0 data\submerged\loot_table\blocks\green_balloon.json
+07f272c983d12b7b779efb6fbfae3369938249ec data\submerged\loot_table\blocks\green_and_blue_balloons.json
+0a2cd59ce2687c4d00a0b3a2c59706f5d58ae812 data\submerged\loot_table\blocks\red_and_yellow_balloons.json

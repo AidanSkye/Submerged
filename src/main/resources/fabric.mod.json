@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "submerged",
+  "version": "${version}",
+  "name": "Submerged",
+  "description": "An addon for Wathe that adds a submarine based on the modded Among Us map Submerged, and more!",
+  "authors": ["AidanSkye"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/submerged/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "me.aidanskye.submerged.client.SubmergedDataGenerator"
+    ],
+    "client": [
+      "me.aidanskye.submerged.client.SubmergedClient"
+    ],
+    "main": [
+      "me.aidanskye.submerged.Submerged"
+    ]
+  },
+  "mixins": [
+    "submerged.mixins.json",
+    {
+      "config": "submerged.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "wathe": ">=${wathe_version}"
+  },
+  "suggests": {
+    "gexpress": ">=${gexpress_version}",
+    "watheextended": ">=${watheextended_version}"
+  }
+}

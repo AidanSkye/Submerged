@@ -1,0 +1,14 @@
+{
+  "death_reason.submerged.fell_into_lava": "burning alive.",
+  "death_reason.submerged.elevator_crush": "being crushed by an elevator.",
+  "death_reason.submerged.elevator_fall": "falling down an elevator shaft.",
+
+  "itemGroup.submerged.submerged": "Submerged",
+
+  "block.submerged.red_balloon": "Red Balloon",
+  "block.submerged.green_balloon": "Green Balloon",
+  "block.submerged.blue_balloon": "Blue Balloon",
+  "block.submerged.yellow_balloon": "Yellow Balloon",
+  "block.submerged.red_and_yellow_balloons": "Red and Yellow Balloons",
+  "block.submerged.green_and_blue_balloons": "Green and Blue Balloons"
+}

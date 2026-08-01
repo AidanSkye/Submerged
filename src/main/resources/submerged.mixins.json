@@ -1,0 +1,28 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.aidanskye.submerged.mixin",
+  "plugin": "me.aidanskye.submerged.SubmergedMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BlackoutDetailsMixin",
+    "BlackoutMixin",
+    "GameFunctionsMixin",
+    "GameSettingsCommandMixin",
+    "GameWorldComponentMixin",
+    "GexpressRoleShopMixin",
+    "GexpressStartCommandMixin",
+    "LobbyMapEffectMixin",
+    "PelicanManagerMixin",
+    "PlayerEntityMixin"
+  ],
+  "mixinextras": {
+    "minVersion": "0.5.3"
+  },
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
