@@ -46,9 +46,6 @@ public abstract class SubmergedYachtMapEffect extends MapEffect {
 
         boolean watheExtendedEnabled = FabricLoader.getInstance().isModLoaded("watheextended");
 
-        if (FabricLoader.getInstance().isModLoaded("gexpress")) {
-            roomAmount = RoomKeyRange.forWorld(serverWorld);
-        }
         if (FabricLoader.getInstance().isModLoaded("watheextended")) {
             rtpEnabled = WatheExtendedWorldComponent.KEY.get(serverWorld).isRtpEnabled();
         }

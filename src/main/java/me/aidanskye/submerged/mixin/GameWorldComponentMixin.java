@@ -59,9 +59,17 @@ public abstract class GameWorldComponentMixin {
         BlockState headState = serverWorld.getBlockState(BlockPos.ofFloored(player.getPos().add(0, 1,0)));
         BlockState bodyState = serverWorld.getBlockState(BlockPos.ofFloored(player.getPos()));
         if (headState.isOf(Blocks.LIGHT) && headState.get(Properties.LEVEL_15) == 0) {
-            GameFunctions.killPlayer(player, true, player.getLastAttacker() instanceof PlayerEntity killerPlayer ? killerPlayer : null, Submerged.SubmergedDeathReasons.CRUSHED_BY_ELEVATOR);
+            if (isRunning() && getMapEffect() instanceof SubmergedAidanEnterprisesMapEffect) {
+                GameFunctions.killPlayer(player, true, player.getLastAttacker() instanceof PlayerEntity killerPlayer ? killerPlayer : null, Submerged.SubmergedDeathReasons.CRUSHED_BY_ELEVATOR);
+            } else {
+                GameFunctions.killPlayer(player, false, player.getLastAttacker() instanceof PlayerEntity killerPlayer ? killerPlayer : null, GameConstants.DeathReasons.FELL_OUT_OF_TRAIN);
+            }
         } else if (bodyState.isOf(Blocks.LIGHT) && bodyState.get(Properties.LEVEL_15) == 0) {
-            GameFunctions.killPlayer(player, true, player.getLastAttacker() instanceof PlayerEntity killerPlayer ? killerPlayer : null, Submerged.SubmergedDeathReasons.FELL_INTO_ELEVATOR);
+            if (isRunning() && getMapEffect() instanceof SubmergedAidanEnterprisesMapEffect) {
+                GameFunctions.killPlayer(player, true, player.getLastAttacker() instanceof PlayerEntity killerPlayer ? killerPlayer : null, Submerged.SubmergedDeathReasons.FELL_INTO_ELEVATOR);
+            } else {
+                GameFunctions.killPlayer(player, false, player.getLastAttacker() instanceof PlayerEntity killerPlayer ? killerPlayer : null, GameConstants.DeathReasons.FELL_OUT_OF_TRAIN);
+            }
         }
     }
 

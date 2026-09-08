@@ -15,6 +15,8 @@ public class SubmergedItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(SubmergedBlocks.redBalloonBlock))
                     .displayName(Text.translatable("itemGroup.submerged.submerged"))
                     .entries((displayContext, entries) -> {
+                        entries.add(SubmergedItems.JOB_APPLICATION);
+
                         entries.add(SubmergedBlocks.redBalloonBlock);
                         entries.add(SubmergedBlocks.greenBalloonBlock);
                         entries.add(SubmergedBlocks.blueBalloonBlock);
@@ -59,6 +61,8 @@ public class SubmergedItemGroups {
                         entries.add(SubmergedBlocks.SUBMERGED_STONE);
                         entries.add(SubmergedBlocks.SUBMERGED_YELLOW_CARPET);
                         entries.add(SubmergedBlocks.YELLOW_DEC_WALLPAPER);
+
+                        entries.add(SubmergedItems.MAP_CREATOR);
                     }).build());
 
     public static void initialize() {}

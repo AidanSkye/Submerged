@@ -5,20 +5,28 @@ import dev.doctor4t.wathe.game.GameConstants;
 import dev.doctor4t.wathe.index.WatheItems;
 import dev.doctor4t.wathe.util.ShopEntry;
 import me.aidanskye.submerged.command.SetMapCommand;
+import me.aidanskye.submerged.command.SubmergedCommand;
+import me.aidanskye.submerged.command.argument.MapArgumentType;
 import me.aidanskye.submerged.game.mapeffect.SubmergedMapEffects;
+import me.aidanskye.submerged.game.modifier.SubmergedModifiers;
 import me.aidanskye.submerged.index.SubmergedBlocks;
 import me.aidanskye.submerged.index.SubmergedEntities;
 import me.aidanskye.submerged.index.SubmergedItemGroups;
+import me.aidanskye.submerged.index.SubmergedItems;
+import me.aidanskye.submerged.maps.SubmergedMaps;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v2.ArgumentTypeRegistry;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.command.argument.serialize.ConstantArgumentSerializer;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Map;
 import java.util.Set;
 
 public class Submerged implements ModInitializer {
@@ -34,9 +42,15 @@ public class Submerged implements ModInitializer {
         SubmergedItemGroups.initialize();
         SubmergedEntities.initialize();
         SubmergedBlocks.initialize();
+        SubmergedItems.initialize();
+
+        SubmergedModifiers.initialize();
+
+        ArgumentTypeRegistry.registerArgumentType(id("map"), MapArgumentType.class, ConstantArgumentSerializer.of(MapArgumentType::map));
 
         CommandRegistrationCallback.EVENT.register(((dispatcher, registryAccess, environment) -> {
-            SetMapCommand.register(dispatcher);
+//            SetMapCommand.register(dispatcher);
+            SubmergedCommand.register(dispatcher);
         }));
         SubmergedMapEffects.registerMapEffects();
 
@@ -48,6 +62,8 @@ public class Submerged implements ModInitializer {
                 return PlayerShopComponent.useBlackout(player);
             }
         });
+
+        SubmergedMaps.loadMaps();
     }
 
     public static interface SubmergedDeathReasons {
@@ -56,9 +72,8 @@ public class Submerged implements ModInitializer {
         Identifier FELL_INTO_ELEVATOR = Submerged.id("elevator_fall");
     }
 
-    public static Set<Block> BLACKOUT_BLOCKS = Set.of(
-            Blocks.CAMPFIRE,
-            Blocks.SOUL_CAMPFIRE
+    public static Map<Block, Block> BLACKOUT_BLOCKS = Map.of(
+            Blocks.LIGHT, Blocks.AIR
     );
 
     public static Set<String> knifeSkins = Set.of(

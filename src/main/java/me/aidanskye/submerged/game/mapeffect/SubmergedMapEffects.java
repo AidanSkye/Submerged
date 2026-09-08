@@ -1,6 +1,5 @@
 package me.aidanskye.submerged.game.mapeffect;
 
-import dev.doctor4t.wathe.Wathe;
 import dev.doctor4t.wathe.api.MapEffect;
 import me.aidanskye.submerged.Submerged;
 import me.aidanskye.submerged.game.mapeffect.aidanenterprises.SubmergedDayAidanEnterprisesMapEffect;
@@ -14,6 +13,7 @@ import me.aidanskye.submerged.game.mapeffect.mineshaft.SubmergedNightMineshaftMa
 import me.aidanskye.submerged.game.mapeffect.polus.SubmergedDayPolusMapEffect;
 import me.aidanskye.submerged.game.mapeffect.polus.SubmergedNightPolusMapEffect;
 import me.aidanskye.submerged.game.mapeffect.polus.SubmergedSundownPolusMapEffect;
+import me.aidanskye.submerged.game.mapeffect.tree.SubmergedNightTreeMapEffect;
 import me.aidanskye.submerged.game.mapeffect.yacht.SubmergedDayYachtMapEffect;
 import me.aidanskye.submerged.game.mapeffect.yacht.SubmergedNightYachtMapEffect;
 import me.aidanskye.submerged.game.mapeffect.yacht.SubmergedSundownYachtMapEffect;
@@ -68,6 +68,16 @@ public class SubmergedMapEffects {
     public static final Identifier SUBMERGED_CLOVER_NIGHT_ID = Submerged.id("submerged_clover_night");
 
     public static final MapEffect SUBMERGED_CLOVER_NIGHT = registerMapEffect(SUBMERGED_CLOVER_NIGHT_ID, new SubmergedNightCloverMapEffect(SUBMERGED_CLOVER_NIGHT_ID));
+
+    //Tree Map
+    public static final Identifier SUBMERGED_TREE_NIGHT_ID = Submerged.id("submerged_tree_night");
+
+    public static final MapEffect SUBMERGED_TREE_NIGHT = registerMapEffect(SUBMERGED_TREE_NIGHT_ID, new SubmergedNightTreeMapEffect(SUBMERGED_TREE_NIGHT_ID));
+
+    //Sierpinski-23
+    public static final Identifier SUBMERGED_SIERPINSKI23_NIGHT_ID = Submerged.id("submerged_sierpinski23_night");
+
+    public static final MapEffect SUBMERGED_SIERPINSKI23_NIGHT = registerMapEffect(SUBMERGED_SIERPINSKI23_NIGHT_ID, new SubmergedNightTreeMapEffect(SUBMERGED_SIERPINSKI23_NIGHT_ID));
 
     public static void registerMapEffects() {
         Submerged.LOGGER.info("Registered Map Effects");

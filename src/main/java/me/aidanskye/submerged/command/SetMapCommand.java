@@ -10,7 +10,7 @@ import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec3i;
 
-//this command isn't needed if you are using gexpress for your maps (you should)
+@Deprecated
 public class SetMapCommand {
 
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
@@ -38,11 +38,14 @@ public class SetMapCommand {
                         ).then(
                                 CommandManager.literal(Submerged.id("clover").toString())
                                         .executes(context -> setMap(context.getSource(), "clover"))
+                        ).then(
+                                CommandManager.literal(Submerged.id("tree").toString())
+                                        .executes(context -> setMap(context.getSource(), "tree"))
                         )
         );
     }
 
-    private static int setMap(ServerCommandSource source, String map) { //254
+    private static int setMap(ServerCommandSource source, String map) {
         MapVariablesWorldComponent WorldVariables = MapVariablesWorldComponent.KEY.get(source.getWorld());
         switch (map) {
             case "train" -> {
@@ -121,6 +124,17 @@ public class SetMapCommand {
 
                 WorldVariables.setResetTemplateArea(new Box(436, 78, -3492, 616, 125, -3305));
                 WorldVariables.setResetPasteOffset(new Vec3i(0, 100, 0));
+            }
+            case "tree" -> {
+                WorldVariables.setSpawnPos(new MapVariablesWorldComponent.PosWithOrientation(new Vec3d(-916.5, 0, -333.0), 90, 0));
+                WorldVariables.setSpectatorSpawnPos(new MapVariablesWorldComponent.PosWithOrientation(new Vec3d(-2425.5, 238.5, 118.0), -64, 26));
+
+                WorldVariables.setReadyArea(new Box(-1089, -9, -169, -1083, -3, -162));
+                WorldVariables.setPlayAreaOffset(new Vec3i(-1319, 234, 296));
+                WorldVariables.setPlayArea(new Box(-2492, 221, 213, -2317, 277, 23));
+
+                WorldVariables.setResetTemplateArea(new Box(-2492, -33, 213, -2317, 23, 23));
+                WorldVariables.setResetPasteOffset(new Vec3i(0, 254, 0));
             }
         }
         return 1;

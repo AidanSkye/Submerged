@@ -2,12 +2,13 @@
   "required": true,
   "minVersion": "0.8",
   "package": "me.aidanskye.submerged.client.mixin",
+  "plugin": "me.aidanskye.submerged.client.SubmergedClientMixinPlugin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "LivingEntityRendererMixin",
-    "FixImportedGunSkinsMixin",
     "GexpressCaseRewardPreviewMixin",
-    "GexpressSkinPanelWidgetMixin"
+    "GexpressItemRendererMixin",
+    "GexpressSkinPanelWidgetMixin",
+    "LivingEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

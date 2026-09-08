@@ -19,6 +19,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.joml.Vector3f;
 
+//lowkey just ignore this entity entirely
 public class ElevatorEntity extends Entity {
     private static final TrackedData<Vector3f> ORIGINALPOS = DataTracker.registerData(ElevatorEntity.class, TrackedDataHandlerRegistry.VECTOR3F);
     private static final TrackedData<Boolean> ISMOVING = DataTracker.registerData(ElevatorEntity.class, TrackedDataHandlerRegistry.BOOLEAN);

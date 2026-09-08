@@ -7,14 +7,25 @@
   "mixins": [
     "BlackoutDetailsMixin",
     "BlackoutMixin",
+    "EntityMixin",
     "GameFunctionsMixin",
     "GameSettingsCommandMixin",
     "GameWorldComponentMixin",
+    "GexpressDevWeaponModelsMixin",
+    "GexpressNightVisionManagerMixin",
     "GexpressRoleShopMixin",
     "GexpressStartCommandMixin",
+    "LivingEntityMixin",
     "LobbyMapEffectMixin",
+    "NeonPillarBlockMixin",
+    "NeonTubeBlockMixin",
+    "OutsideTaskMixin",
     "PelicanManagerMixin",
-    "PlayerEntityMixin"
+    "PlayerEntityMixin",
+    "PlayerMoodComponentMixin",
+    "TaskMixin",
+    "ThiefTakeItemPacketMixin",
+    "ToggleableFacingLightBlockMixin"
   ],
   "mixinextras": {
     "minVersion": "0.5.3"

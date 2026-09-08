@@ -2,10 +2,12 @@ package me.aidanskye.submerged.client.datagen;
 
 import me.aidanskye.submerged.Submerged;
 import me.aidanskye.submerged.index.SubmergedBlocks;
+import me.aidanskye.submerged.index.SubmergedItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.data.client.*;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
@@ -53,10 +55,50 @@ public class SubmergedModelProvider extends FabricModelProvider {
         registerBalloon(SubmergedBlocks.yellowBalloonBlock, generator);
         registerDoubleBalloon(SubmergedBlocks.redAndYellowBalloonBlock, generator);
         registerDoubleBalloon(SubmergedBlocks.greenAndBlueBalloonBlock, generator);
+
+        generator.registerSimpleCubeAll(SubmergedBlocks.CROSS_GLASS);
+        generator.registerSimpleCubeAll(SubmergedBlocks.DARK_MED_FLOOR);
+        generator.registerSimpleCubeAll(SubmergedBlocks.DARK_WALLPAPER);
+        generator.registerSimpleCubeAll(SubmergedBlocks.DEC_BLUE_WALLPAPER);
+        generator.registerSimpleCubeAll(SubmergedBlocks.DEC_BROWN_FLOOR);
+        generator.registerSimpleCubeAll(SubmergedBlocks.DEC_RED_FLOOR);
+        generator.registerSimpleCubeAll(SubmergedBlocks.DEC_WOOD_FLOOR);
+        generator.registerSimpleCubeAll(SubmergedBlocks.GRAY_WALLPAPER);
+        generator.registerSimpleCubeAll(SubmergedBlocks.GREEN_CAF_FLOOR);
+        generator.registerSimpleCubeAll(SubmergedBlocks.HEAVILY_RUST_STEEL);
+        generator.registerSimpleCubeAll(SubmergedBlocks.LIGHT_RUST_STEEL);
+        generator.registerSimpleCubeAll(SubmergedBlocks.LIGHT_MED_FLOOR);
+        generator.registerSimpleCubeAll(SubmergedBlocks.LIGHT_PURPLE_WALLPAPER);
+        generator.registerSimpleCubeAll(SubmergedBlocks.LIGHT_WALLPAPER);
+        generator.registerSimpleCubeAll(SubmergedBlocks.MED_WALL);
+        generator.registerSimpleCubeAll(SubmergedBlocks.ORANGE_TILES);
+        generator.registerSimpleCubeAll(SubmergedBlocks.POLISHED_STEEL);
+        generator.registerSimpleCubeAll(SubmergedBlocks.PURPLE_CAF_FLOOR);
+        generator.registerSimpleCubeAll(SubmergedBlocks.PURPLE_DEC_WALLPAPER);
+        generator.registerSimpleCubeAll(SubmergedBlocks.PURPLE_WALLPAPER);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SEASTONE_PILLAR);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SEASTONE_TILES);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SMOOTH_STEEL);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SUBMERGED_BLUE_CARPET);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SUBMERGED_CYAN_CARPET);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SUBMERGED_DARK_SANDSTONE);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SUBMERGED_DARK_YELLOW_CARPET);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SUBMERGED_GREEN_CARPET);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SUBMERGED_LIME_CARPET);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SUBMERGED_MAGENTA_CARPET);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SUBMERGED_PURPLE_CARPET);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SUBMERGED_RED_CARPET);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SUBMERGED_SAND);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SUBMERGED_SANDSTONE);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SUBMERGED_STONE);
+        generator.registerSimpleCubeAll(SubmergedBlocks.SUBMERGED_YELLOW_CARPET);
+        generator.registerSimpleCubeAll(SubmergedBlocks.YELLOW_DEC_WALLPAPER);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator generator) {
+        generator.register(SubmergedItems.JOB_APPLICATION, Models.GENERATED);
+        generator.register(SubmergedItems.MAP_CREATOR, Items.STICK, Models.GENERATED);
     }
 }
 

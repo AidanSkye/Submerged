@@ -46,10 +46,6 @@ public abstract class SubmergedCloverMapEffect extends MapEffect {
 
         boolean watheExtendedEnabled = FabricLoader.getInstance().isModLoaded("watheextended");
 
-        if (FabricLoader.getInstance().isModLoaded("gexpress")) {
-            roomAmount = RoomKeyRange.forWorld(serverWorld);
-        }
-
         for (ServerPlayerEntity serverPlayerEntity : players) {
             if (watheExtendedEnabled) {
                 serverPlayerEntity.giveItemStack(new ItemStack(Registries.ITEM.get(Identifier.of("watheextended","guidebook"))));

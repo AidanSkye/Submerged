@@ -2,15 +2,13 @@ package me.aidanskye.submerged.index;
 
 import me.aidanskye.submerged.Submerged;
 import me.aidanskye.submerged.block.BalloonBlock;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.TransparentBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.DyeColor;
 
 public class SubmergedBlocks {
 
@@ -21,7 +19,7 @@ public class SubmergedBlocks {
     public static Block redAndYellowBalloonBlock = registerBlock("red_and_yellow_balloons", new BalloonBlock(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL).nonOpaque().breakInstantly().noCollision()));
     public static Block greenAndBlueBalloonBlock = registerBlock("green_and_blue_balloons", new BalloonBlock(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL).nonOpaque().breakInstantly().noCollision()));
 
-    public static final Block CROSS_GLASS = registerBlock( "cross_glass", new TransparentBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque().blockVision(Blocks::never).solidBlock(Blocks::never)));
+    public static final Block CROSS_GLASS = registerBlock( "cross_glass", new StainedGlassBlock(DyeColor.LIGHT_BLUE, AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS)));
     public static final Block DARK_MED_FLOOR = registerBlock( "dark_med_floor", new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL)));
     public static final Block DARK_WALLPAPER = registerBlock( "dark_wallpaper", new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL)));
     public static final Block DEC_BLUE_WALLPAPER = registerBlock( "dec_blue_wallpaper", new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL)));

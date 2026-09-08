@@ -18,6 +18,12 @@
     ],
     "main": [
       "me.aidanskye.submerged.Submerged"
+    ],
+    "cardinal-components": [
+      "me.aidanskye.submerged.cca.SubmergedComponents"
+    ],
+    "voicechat": [
+      "me.aidanskye.submerged.compat.SubmergedVoicechatPlugin"
     ]
   },
   "mixins": [
@@ -27,14 +33,24 @@
       "environment": "client"
     }
   ],
+  "custom": {
+    "cardinal-components": [
+      "submerged:map"
+    ]
+  },
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric-api": "*",
     "minecraft": "${minecraft_version}",
-    "wathe": ">=${wathe_version}"
+    "wathe": ">=${wathe_version}",
+    "harpymodloader": ">=${harpymodloader_version}"
   },
   "suggests": {
     "gexpress": ">=${gexpress_version}",
-    "watheextended": ">=${watheextended_version}"
+    "watheextended": ">=${watheextended_version}",
+    "kinswathe": ">=${kinswathe_version}",
+    "stupid_express": ">=${stupid_express_version}",
+    "noellesroles": ">=${noelles_roles_version}",
+    "voicechat_api": ">=${voicechat_api_version}"
   }
 }

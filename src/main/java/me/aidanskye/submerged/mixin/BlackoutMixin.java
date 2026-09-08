@@ -4,6 +4,7 @@ import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import dev.doctor4t.wathe.cca.WorldBlackoutComponent;
 import dev.doctor4t.wathe.game.GameConstants;
+import dev.doctor4t.wathe.index.WatheProperties;
 import me.aidanskye.submerged.Submerged;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -38,12 +39,15 @@ public abstract class BlackoutMixin {
     @ModifyExpressionValue(method = "triggerBlackout", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;contains(Lnet/minecraft/state/property/Property;)Z"))
     public boolean submerged$disableMoreBlocksDuringBlackout(boolean original, @Local(name = "state") BlockState state, @Local(name = "pos") BlockPos pos) {
         boolean isOtherLightBlock = false;
-        for (Block block : Submerged.BLACKOUT_BLOCKS) {
-            if (state.isOf(block) || state.contains(Properties.LIT)) {
+        for (Block block : Submerged.BLACKOUT_BLOCKS.keySet()) {
+            if (!state.contains(WatheProperties.ACTIVE) && (state.isOf(block) || state.contains(Properties.LIT))) {
+                if (state.contains(Properties.LEVEL_15) && state.get(Properties.LEVEL_15) == 0) { //ignore light level 0 blocks, they are used for kill blocks
+                    break;
+                }
                 isOtherLightBlock = true;
                 int duration = GameConstants.BLACKOUT_MIN_DURATION + this.world.random.nextInt(GameConstants.BLACKOUT_MAX_DURATION - GameConstants.BLACKOUT_MIN_DURATION);
                 if (duration > this.ticks) this.ticks = duration;
-                WorldBlackoutComponent.BlackoutDetails detail = new WorldBlackoutComponent.BlackoutDetails(pos, duration, state.get(Properties.LIT));
+                WorldBlackoutComponent.BlackoutDetails detail = new WorldBlackoutComponent.BlackoutDetails(pos, duration, state.contains(Properties.LIT) ? state.get(Properties.LIT) : false);
                 detail.init(this.world);
                 this.blackouts.add(detail);
                 break;

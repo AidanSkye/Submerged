@@ -51,10 +51,14 @@ repositories {
         url "https://maven.maxhenkel.de/repository/public"
     }
 
-//    maven {
-//        url 'https://jitpack.io'
-//        content { includeGroup "com.github.greyifer" }
-//    }
+    maven {
+        url = "https://maven.maxhenkel.de/repository/public"
+    }
+
+    maven {
+        name 'Xander Maven'
+        url 'https://maven.isxander.dev/releases'
+    }
 }
 
 dependencies {
@@ -72,10 +76,18 @@ dependencies {
     modImplementation "dev.doctor4t:ratatouille:${project.ratatouille_version}"
     include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:0.5.3")))
 
+    modImplementation "de.maxhenkel.voicechat:voicechat-api:${voicechat_api_version}"
+
+    modApi "maven.modrinth:harpymodloader:${project.harpymodloader_version}"
+    modImplementation "dev.isxander:yet-another-config-lib:${project.yacl_version}"
+
     modCompileOnly "maven.modrinth:gexpress:${project.gexpress_version}"
-    modCompileOnly "maven.modrinth:wathe-extended:${project.watheextended_version}"
+    modImplementation "maven.modrinth:wathe-extended:${project.watheextended_version}"
     modCompileOnly "maven.modrinth:moving-elevators:${project.movingelevators_version}-fabric-mc1.21"
     modCompileOnly "maven.modrinth:wathe-blood:${project.wathe_blood_version}"
+    modCompileOnly "maven.modrinth:kinswathe:${project.kinswathe_version}"
+    modCompileOnly "maven.modrinth:stupid-express:${project.stupid_express_version}"
+    modCompileOnly "maven.modrinth:noelles-roles-tmm:${project.noelles_roles_version}"
 }
 
 processResources {
@@ -89,8 +101,13 @@ processResources {
                 "minecraft_version": project.minecraft_version,
                 "loader_version": project.loader_version,
                 "wathe_version": project.wathe_version,
+                "voicechat_api_version": project.voicechat_api_version,
                 "gexpress_version": project.gexpress_version,
-                "watheextended_version": project.watheextended_version
+                "watheextended_version": project.watheextended_version,
+                "kinswathe_version": project.kinswathe_version,
+                "stupid_express_version": project.stupid_express_version,
+                "harpymodloader_version": project.harpymodloader_version,
+                "noelles_roles_version": project.noelles_roles_version
     }
 }
 

@@ -16,23 +16,23 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(DevWeaponModels.class)
 public class FixImportedGunSkinsMixin {
 
-    @ModifyReturnValue(method = "resolveId", at = @At(value = "RETURN"))
-    private static Identifier submerged$makeGunSkinsShowRegardlessOfConfig(Identifier original, @Local(argsOnly = true, name = "stack") ItemStack stack, @Local(argsOnly = true, name = "entity") LivingEntity entity) {
-        if (!usesDefaultWatheSkin(stack)) {
-            return null;
-        }
-        WeaponSkinType type = isKnifeLike(stack) ? WeaponSkinType.KNIFE : (isGunLike(stack) ? WeaponSkinType.GUN : null);
-        WeaponSkin skin = resolveSkin(stack, entity);
-        if (skin != null && skin.supports(type)) {
-            Identifier importedModel = skin.model(type);
-            if (importedModel != null) {
-                return importedModel;
-            }
-            return original;
-        } else {
-            return null;
-        }
-    }
+//    @ModifyReturnValue(method = "resolveId", at = @At(value = "RETURN"))
+//    private static Identifier submerged$makeGunSkinsShowRegardlessOfConfig(Identifier original, @Local(argsOnly = true, name = "stack") ItemStack stack, @Local(argsOnly = true, name = "entity") LivingEntity entity) {
+//        if (!usesDefaultWatheSkin(stack)) {
+//            return null;
+//        }
+//        WeaponSkinType type = isKnifeLike(stack) ? WeaponSkinType.KNIFE : (isGunLike(stack) ? WeaponSkinType.GUN : null);
+//        WeaponSkin skin = resolveSkin(stack, entity);
+//        if (skin != null && skin.supports(type)) {
+//            Identifier importedModel = skin.model(type);
+//            if (importedModel != null) {
+//                return importedModel;
+//            }
+//            return original;
+//        } else {
+//            return null;
+//        }
+//    }
 
     @Shadow
     private static boolean usesDefaultWatheSkin(ItemStack stack) {
